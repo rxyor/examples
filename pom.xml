@@ -40,6 +40,8 @@
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
         <junit-platform-runner.version>1.7.0</junit-platform-runner.version>
         <junit5.version>5.7.0</junit5.version>
+        <junit.version>4.13.2</junit.version>
+        <javax.el.version>3.0.0</javax.el.version>
     </properties>
 
     <dependencyManagement>
@@ -87,6 +89,17 @@
                 <artifactId>junit-vintage-engine</artifactId>
                 <version>${junit5.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>${javax.el.version}</version>
             </dependency>
             <!--1: test-->
             <dependency>
