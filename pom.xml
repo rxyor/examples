@@ -35,9 +35,11 @@
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <spring-boot-maven-plugin.version>2.2.4.RELEASE</spring-boot-maven-plugin.version>
         <!--1: plugin-->
+        <guava.version>23.0</guava.version>
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
         <junit-platform-runner.version>1.7.0</junit-platform-runner.version>
         <junit5.version>5.7.0</junit5.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -81,6 +83,16 @@
                 <scope>test</scope>
             </dependency>
             <!--1: test-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
