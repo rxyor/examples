@@ -16,10 +16,6 @@
 
     <dependencies>
         <!--0:test-->
-        <dependency>
-            <groupId>com.github.rxyor.examples</groupId>
-            <artifactId>examples-junit5-test</artifactId>
-        </dependency>
         <!--0:test-->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -32,6 +28,11 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

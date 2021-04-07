@@ -35,11 +35,11 @@
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <spring-boot-maven-plugin.version>2.2.4.RELEASE</spring-boot-maven-plugin.version>
         <!--1: plugin-->
+        <commons-lang3.version>3.12.0</commons-lang3.version>
         <guava.version>23.0</guava.version>
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
         <junit-platform-runner.version>1.7.0</junit-platform-runner.version>
         <junit5.version>5.7.0</junit5.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +52,12 @@
             </dependency>
             <!--0: modules-->
             <!--1: test-->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit5.version}</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
