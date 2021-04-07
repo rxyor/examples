@@ -21,6 +21,9 @@ public class ValidatorsTest {
     }
 
     public static class Bean {
+        @NotBlank
+        private String nickname;
+
         @NotBlank(message = "姓名不能为空")
         private String name;
 

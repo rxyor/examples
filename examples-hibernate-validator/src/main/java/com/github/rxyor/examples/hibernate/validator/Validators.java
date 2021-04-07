@@ -25,6 +25,7 @@ import org.hibernate.validator.HibernateValidator;
 public class Validators {
 
     private final static String MSG_JOINER = ";\n";
+    private final static String MERGE_VALID_MSG = ":";
 
     private final Validator validator;
 
@@ -39,6 +40,19 @@ public class Validators {
     public Validators(Validator validator) {
         Preconditions.checkNotNull(validator, "validator不能为空");
         this.validator = validator;
+    }
+
+    /**
+     * 构造异常信息
+     *
+     * @param constraintViolation 校验异常
+     * @return String
+     */
+    private static String buildValidMsg(ConstraintViolation<Object> constraintViolation) {
+        if (constraintViolation == null) {
+            return null;
+        }
+        return constraintViolation.getPropertyPath() + MERGE_VALID_MSG + constraintViolation.getMessage();
     }
 
     private Validator getValidator() {
@@ -112,7 +126,7 @@ public class Validators {
      */
     private List<String> parseMsg(Set<ConstraintViolation<Object>> constraintViolations) {
         return constraintViolations.stream()
-            .map(ConstraintViolation::getMessage)
+            .map(Validators::buildValidMsg)
             .filter(StringUtils::isNotBlank)
             .collect(Collectors.toList());
     }
