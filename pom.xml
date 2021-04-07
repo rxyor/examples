@@ -4,9 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.rxyor.examples</groupId>
     <artifactId>examples</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <name>examples</name>
+
+    <modules>
+        <module>examples-hibernate-validator</module>
+        <module>examples-junit5-test</module>
+    </modules>
 
     <properties>
         <!--0: project-->
@@ -14,6 +19,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <docker.image.tag>xryor</docker.image.tag>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <revision>1.0-SNAPSHOT</revision>
         <!--0: project-->
         <!--1: plugin-->
         <docker-maven-plugin.version>1.2.2</docker-maven-plugin.version>
@@ -29,11 +35,21 @@
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <spring-boot-maven-plugin.version>2.2.4.RELEASE</spring-boot-maven-plugin.version>
         <!--1: plugin-->
+        <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
+        <junit-platform-runner.version>1.7.0</junit-platform-runner.version>
+        <junit5.version>5.7.0</junit5.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!--1.test-->
+            <!--0: modules-->
+            <dependency>
+                <groupId>com.github.rxyor.examples</groupId>
+                <artifactId>examples-junit5-test</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <!--0: modules-->
+            <!--1: test-->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
@@ -64,7 +80,12 @@
                 <version>${junit5.version}</version>
                 <scope>test</scope>
             </dependency>
-            <!--1.test-->
+            <!--1: test-->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
