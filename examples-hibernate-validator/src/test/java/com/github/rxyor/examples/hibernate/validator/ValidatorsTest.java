@@ -3,7 +3,7 @@ package com.github.rxyor.examples.hibernate.validator;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Range;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  *<p>
